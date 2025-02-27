@@ -12,7 +12,7 @@ const csrf = require('csurf');
 app.use(helmet)
 app.use(express.csrf());
 
-// Middlewares
+Middlewares
 const csrfProtect = csrf({ cookie: true })
 app.get('/form', csrfProtect, function(req, res) {
 res.render('send', { csrfToken: req.csrfToken() })
@@ -39,7 +39,7 @@ global.URLSearchParams = URLSearchParams;
 let rawdata = fs.readFileSync('UScities.json');
 let USCities = JSON.parse(rawdata);
 
-// GraphQL schema
+GraphQL schema
 let schema = buildSchema(`
     type Query {
         city(name: String): City
@@ -72,7 +72,7 @@ var root = {
     cities: getCities
 };
 
-// Create an express server and a GraphQL endpoint
+Create an express server and a GraphQL endpoint
 
 
 app.use('/graphql', graphqlHTTP({
