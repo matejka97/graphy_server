@@ -5,7 +5,7 @@ const express = require('express');
 const session = require('express-session');
 const app = express();
 
-Uncomment the lines of code  which have been commented below to make the application secure
+
 const helmet = require('helmet')
 const csrf = require('csurf');
 
@@ -39,7 +39,7 @@ global.URLSearchParams = URLSearchParams;
 let rawdata = fs.readFileSync('UScities.json');
 let USCities = JSON.parse(rawdata);
 
-GraphQL schema
+
 let schema = buildSchema(`
     type Query {
         city(name: String): City
@@ -72,7 +72,7 @@ var root = {
     cities: getCities
 };
 
-Create an express server and a GraphQL endpoint
+
 
 
 app.use('/graphql', graphqlHTTP({
